@@ -1,103 +1,174 @@
-import Image from "next/image";
+import Link from "next/link";
+import { Heart, Users, Accessibility, Calendar, Utensils, GraduationCap, ArrowRight } from "lucide-react";
+
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+
+const programs = [
+  {
+    icon: Users,
+    title: "Mental health wellness support",
+    description: "Comprehensive mental health services and counseling for persons with disability and their families.",
+  },
+  {
+    icon: Accessibility,
+    title: "Patient care",
+    description: "Medical care, rehabilitation services, and assistive devices for improved quality of life.",
+  },
+  {
+    icon: Accessibility,
+    title: "Accessibility devices for mobility",
+    description: "Providing wheelchairs, prosthetics, and other mobility aids to enhance independence.",
+  },
+  {
+    icon: Calendar,
+    title: "Camps for underprivileged PwDs",
+    description: "Medical camps and support programs specifically designed for underprivileged persons with disability.",
+  },
+  {
+    icon: Utensils,
+    title: "Food and groceries support for underprivileged PwDs",
+    description: "Nutritional support and food assistance for persons with disability in need.",
+  },
+  {
+    icon: GraduationCap,
+    title: "Education support for PwDs",
+    description: "Educational assistance, scholarships, and learning resources for persons with disability.",
+  },
+];
+
+const impactStats = [
+  { label: "Beneficiaries", value: "—" },
+  { label: "Assistive devices delivered", value: "—" },
+  { label: "Camps conducted", value: "—" },
+];
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="flex flex-col">
+      {/* Hero Section */}
+      <section className="relative py-20 lg:py-32 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center space-y-8">
+            <Badge variant="outline" className="text-sm">
+              AROKYA ILLAM CHARITABLE TRUST · Think better.
+            </Badge>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <div className="space-y-4">
+              <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
+                Health, dignity, and access for every person with disability.
+              </h1>
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                Care, devices, camps, nutrition, and education support — across India.
+              </p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button asChild size="lg" className="text-lg px-8">
+                <Link href="/get-support">
+                  Get Support
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="text-lg px-8">
+                <Link href="/donate">
+                  <Heart className="mr-2 h-5 w-5" />
+                  Donate Now
+                </Link>
+              </Button>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      {/* Programs Section */}
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Programs</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Comprehensive support services designed to improve the quality of life for persons with disability across India.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {programs.map((program, index) => {
+              const Icon = program.icon;
+              return (
+                <Card key={index} className="h-full">
+                  <CardHeader>
+                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                      <Icon className="w-6 h-6 text-primary" />
+                    </div>
+                    <CardTitle className="text-xl">{program.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-base">
+                      {program.description}
+                    </CardDescription>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Impact Stats Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Impact</h2>
+            <p className="text-xl text-muted-foreground">
+              Making a difference in the lives of persons with disability across India.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            {impactStats.map((stat, index) => (
+              <div key={index} className="text-center">
+                <div className="text-4xl md:text-5xl font-bold text-primary mb-2">
+                  {stat.value}
+                </div>
+                <div className="text-lg text-muted-foreground">
+                  {stat.label}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-primary text-primary-foreground">
+        <div className="container mx-auto px-4 text-center">
+          <div className="max-w-3xl mx-auto space-y-8">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                Ready to Make a Difference?
+              </h2>
+              <p className="text-xl opacity-90">
+                Whether you need support or want to contribute to our mission, we're here to help.
+              </p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button asChild size="lg" variant="secondary" className="text-lg px-8">
+                <Link href="/get-support">
+                  Get Support
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="text-lg px-8 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+                <Link href="/volunteer">
+                  Join as Volunteer
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

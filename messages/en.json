@@ -1,0 +1,160 @@
+{
+  "brand": {
+    "name": "AROKYA ILLAM CHARITABLE TRUST",
+    "tagline": "Think better.",
+    "description": "An organisation providing health care and aided support for persons with disability (PwDs)."
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "programs": "Programs",
+    "getSupport": "Get Support",
+    "volunteer": "Volunteer",
+    "events": "Events",
+    "news": "News",
+    "donate": "Donate",
+    "contact": "Contact",
+    "admin": "Admin"
+  },
+  "hero": {
+    "headline": "Health, dignity, and access for every person with disability.",
+    "subheadline": "Care, devices, camps, nutrition, and education support — across India.",
+    "cta": {
+      "primary": "Get Support",
+      "secondary": "Donate Now"
+    },
+    "badge": "AROKYA ILLAM CHARITABLE TRUST · Think better."
+  },
+  "programs": {
+    "title": "Our Programs",
+    "subtitle": "Comprehensive support services designed to improve the quality of life for persons with disability across India.",
+    "mentalHealth": {
+      "title": "Mental health wellness support",
+      "description": "Comprehensive mental health services and counseling for persons with disability and their families."
+    },
+    "patientCare": {
+      "title": "Patient care",
+      "description": "Medical care, rehabilitation services, and assistive devices for improved quality of life."
+    },
+    "mobilityDevices": {
+      "title": "Accessibility devices for mobility",
+      "description": "Providing wheelchairs, prosthetics, and other mobility aids to enhance independence."
+    },
+    "camps": {
+      "title": "Camps for underprivileged PwDs",
+      "description": "Medical camps and support programs specifically designed for underprivileged persons with disability."
+    },
+    "nutrition": {
+      "title": "Food and groceries support for underprivileged PwDs",
+      "description": "Nutritional support and food assistance for persons with disability in need."
+    },
+    "education": {
+      "title": "Education support for PwDs",
+      "description": "Educational assistance, scholarships, and learning resources for persons with disability."
+    }
+  },
+  "about": {
+    "title": "About AROKYA ILLAM",
+    "subtitle": "Building a More Inclusive India",
+    "description": "AROKYA ILLAM CHARITABLE TRUST (AICT) is a public charitable trust working across India to ensure dignity, access, and inclusion for persons with disability.",
+    "mission": {
+      "title": "Our Mission",
+      "content": "To provide healthcare, rehabilitation, education, and social support that improves the quality of life for persons with disability. We envision a society where every person with disability can live with dignity, achieve their potential, and participate fully in community life."
+    },
+    "values": {
+      "title": "Our Values",
+      "subtitle": "The principles that guide our work and shape our approach to supporting persons with disability.",
+      "compassion": {
+        "title": "Compassion",
+        "description": "We approach every individual with empathy, understanding, and genuine care for their unique needs and circumstances."
+      },
+      "accessibility": {
+        "title": "Accessibility",
+        "description": "We are committed to breaking down barriers and ensuring that all persons with disability have equal access to opportunities."
+      },
+      "inclusion": {
+        "title": "Inclusion",
+        "description": "We believe in creating a society where persons with disability are fully included and valued as equal members."
+      },
+      "justice": {
+        "title": "Justice",
+        "description": "We advocate for the rights and dignity of persons with disability, ensuring fair treatment and equal opportunities."
+      }
+    },
+    "governance": {
+      "title": "Governance & Transparency",
+      "subtitle": "We maintain the highest standards of governance and transparency in all our operations."
+    }
+  },
+  "cta": {
+    "getSupport": "Get Support",
+    "donateNow": "Donate Now",
+    "volunteer": "Join as Volunteer",
+    "contactUs": "Contact Us",
+    "learnMore": "Learn More",
+    "applyNow": "Apply Now",
+    "readMore": "Read More"
+  },
+  "footer": {
+    "description": "Think better. Providing healthcare and aided support for persons with disability across India.",
+    "quickLinks": "Quick Links",
+    "support": "Support",
+    "contact": "Get in Touch",
+    "copyright": "© {year} AROKYA ILLAM CHARITABLE TRUST. All rights reserved.",
+    "bankNote": "Donations by bank transfer only. 80G tax exemption details available upon request."
+  },
+  "forms": {
+    "required": "Required",
+    "optional": "Optional",
+    "submit": "Submit",
+    "submitting": "Submitting...",
+    "success": "Success",
+    "error": "Error",
+    "getSupport": {
+      "title": "Get Support",
+      "subtitle": "Apply for the support services you need. Our team will review your application and get back to you within 48 hours.",
+      "successMessage": "Thank you. Your application has been received. Our team will review it and contact you soon."
+    },
+    "volunteer": {
+      "title": "Join Our Volunteer Team",
+      "subtitle": "Make a meaningful difference in the lives of persons with disability. Join our dedicated team of volunteers across India.",
+      "successMessage": "Thanks for volunteering! We will get in touch soon to discuss opportunities that match your interests and availability."
+    },
+    "contact": {
+      "title": "Contact Us",
+      "subtitle": "Get in touch with us. We're here to help and answer any questions you may have about our services and support.",
+      "successMessage": "Message received. Our team will respond soon."
+    }
+  },
+  "admin": {
+    "title": "Admin Dashboard",
+    "login": "Admin Login",
+    "loginSubtitle": "Sign in to access the admin dashboard",
+    "unauthorized": "Access Denied",
+    "unauthorizedMessage": "You don't have permission to access this page. Admin or staff privileges are required.",
+    "stats": {
+      "totalApplications": "Total Applications",
+      "pendingApplications": "pending review",
+      "totalVolunteers": "Volunteers",
+      "totalContacts": "Messages",
+      "upcomingEvents": "Upcoming Events"
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "save": "Save",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "continue": "Continue",
+    "confirm": "Confirm",
+    "yes": "Yes",
+    "no": "No"
+  }
+}
