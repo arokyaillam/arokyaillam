@@ -24,7 +24,7 @@ vi.mock('next/navigation', () => ({
 // Mock Next.js Image component
 vi.mock('next/image', () => ({
   default: ({ src, alt, ..._props }: { src: string; alt: string; [key: string]: unknown }) => {
-    return `<img src="${src}" alt="${alt}" {...props} />`
+    return `<img src="${src}" alt="${alt}" />`
   },
 }))
 
@@ -51,7 +51,7 @@ global.ResizeObserver = vi.fn().mockImplementation(() => ({
 }))
 
 // Suppress console warnings in tests
-// eslint-disable-next-line @typescript-eslint/no-unused-vars, no-console
+// eslint-disable-next-line no-console
 console.warn = (..._args: unknown[]) => {
   // Suppress specific warnings in tests
 }

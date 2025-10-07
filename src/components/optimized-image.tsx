@@ -18,7 +18,7 @@ export function OptimizedImage({
   ...props
 }: OptimizedImageProps) {
   const [isLoading, setIsLoading] = useState(true);
-  const [hasError, setHasError] = useState(false);
+  
   const [currentSrc, setCurrentSrc] = useState(src);
 
   const handleLoad = () => {
@@ -27,7 +27,6 @@ export function OptimizedImage({
 
   const handleError = () => {
     setIsLoading(false);
-    setHasError(true);
     if (fallbackSrc) {
       setCurrentSrc(fallbackSrc);
     }

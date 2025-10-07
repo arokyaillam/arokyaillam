@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ShieldX, ArrowLeft } from "lucide-react";
+import { ArrowLeft, ShieldX } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -14,7 +14,7 @@ export default function UnauthorizedPage() {
           </div>
           <CardTitle className="text-2xl">Access Denied</CardTitle>
           <CardDescription>
-            You don't have permission to access this page. Admin or staff privileges are required.
+            You don&apos;t have permission to access this page. Admin or staff privileges are required.
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">

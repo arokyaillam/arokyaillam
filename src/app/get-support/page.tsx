@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { FileText, Upload, CheckCircle, AlertCircle } from "lucide-react";
+import { AlertCircle, CheckCircle, FileText, Upload } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -12,7 +12,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import { supportFormSchema, type SupportFormData } from "@/lib/validations/support-form";
+import { type SupportFormData, supportFormSchema } from "@/lib/validations/support-form";
 import { supabaseUtils } from "@/lib/supabase/utils";
 import { createClient } from "@/lib/supabase/client";
 
@@ -75,7 +75,7 @@ export default function GetSupportPage() {
       const fileExt = file.name.split('.').pop();
       const fileName = `${Date.now()}.${fileExt}`;
 
-      const { data, error } = await supabase.storage
+      const { error } = await supabase.storage
         .from('uploads')
         .upload(fileName, file);
 
@@ -87,6 +87,7 @@ export default function GetSupportPage() {
 
       return publicUrl;
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.error(`Error uploading ${type} proof:`, error);
       return null;
     }
@@ -129,6 +130,7 @@ export default function GetSupportPage() {
       setSubmitStatus("success");
       setSubmitMessage("Thank you. Your application has been received. Our team will review it and contact you soon.");
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.error("Error submitting form:", error);
       setSubmitStatus("error");
       setSubmitMessage("There was an error submitting your application. Please try again or contact us directly.");

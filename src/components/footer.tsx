@@ -1,6 +1,6 @@
 import * as React from "react"
 import Link from "next/link"
-import { Heart, MapPin, Phone, Mail } from "lucide-react"
+import { Mail, MapPin, Phone } from "lucide-react"
 
 export function Footer() {
   const currentYear = new Date().getFullYear()

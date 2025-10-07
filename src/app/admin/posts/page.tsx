@@ -7,7 +7,7 @@ export const dynamic = 'force-dynamic';
 
 // Force dynamic rendering to avoid static generation issues
 export const dynamicParams = true;
-import { Plus, Edit, Trash2, Eye, Calendar, User } from "lucide-react";
+import { Calendar, Edit, Eye, Plus, Trash2, User } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+
 import { Eye, EyeOff, Lock, Mail } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -17,7 +17,7 @@ export function AdminLogin() {
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
-  const router = useRouter();
+  
 
   // Use centralized Supabase client (handles environment validation)
   const supabase = createClient();
@@ -27,6 +27,7 @@ export function AdminLogin() {
     setIsLoading(true);
     setError("");
 
+    // eslint-disable-next-line no-console
     console.log("🔐 Admin login attempt:", { email });
 
     try {
@@ -35,36 +36,45 @@ export function AdminLogin() {
         password,
       });
 
+      // eslint-disable-next-line no-console
       console.log("🔐 Auth result:", { data: data?.user?.email, error: error?.message });
 
       if (error) {
+        // eslint-disable-next-line no-console
         console.error("🔐 Login error:", error);
         setError(error.message);
         return;
       }
 
       if (data.user) {
+        // eslint-disable-next-line no-console
         console.log("🔐 User logged in:", data.user.email);
+        // eslint-disable-next-line no-console
         console.log("🔐 User metadata:", data.user.user_metadata);
 
         // Check if user has admin or staff role
         const userRole = data.user.user_metadata?.role;
+        // eslint-disable-next-line no-console
         console.log("🔐 User role:", userRole);
 
         if (userRole === 'admin' || userRole === 'staff') {
+          // eslint-disable-next-line no-console
           console.log("🔐 Redirecting to admin dashboard...");
           // Use window.location for immediate redirect
           window.location.href = "/admin";
         } else {
+          // eslint-disable-next-line no-console
           console.log("🔐 Access denied - insufficient role");
           setError("Access denied. Admin or staff privileges required.");
           await supabase.auth.signOut();
         }
       } else {
+        // eslint-disable-next-line no-console
         console.log("🔐 No user data returned");
         setError("Login failed. Please check your credentials.");
       }
     } catch (err) {
+      // eslint-disable-next-line no-console
       console.error("🔐 Unexpected error:", err);
       setError("An unexpected error occurred. Please try again.");
     } finally {
@@ -141,7 +151,7 @@ export function AdminLogin() {
 
           <div className="mt-6 text-center text-sm text-muted-foreground">
             <p>For admin access, please contact your system administrator.</p>
-            <p className="mt-1">Don't have an account? Contact IT support.</p>
+            <p className="mt-1">Don&apos;t have an account? Contact IT support.</p>
           </div>
         </CardContent>
       </Card>

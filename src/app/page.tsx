@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Heart, Users, Accessibility, Calendar, Utensils, GraduationCap, ArrowRight } from "lucide-react";
+import { Accessibility, ArrowRight, Calendar, GraduationCap, Heart, Users, Utensils } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -149,7 +149,7 @@ export default function Home() {
                 Ready to Make a Difference?
               </h2>
               <p className="text-xl opacity-90">
-                Whether you need support or want to contribute to our mission, we're here to help.
+                Whether you need support or want to contribute to our mission, we&apos;re here to help.
               </p>
             </div>
 

@@ -1,4 +1,4 @@
-import { Shield, Users, FileText, Award, Heart, Target, Eye, Scale } from "lucide-react";
+import { Award, Eye, FileText, Heart, Scale, Shield, Target, Users } from "lucide-react";
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";

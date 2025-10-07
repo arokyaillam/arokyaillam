@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Users, CheckCircle, AlertCircle } from "lucide-react";
+import { AlertCircle, CheckCircle, Users } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -11,7 +11,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import { volunteerFormSchema, type VolunteerFormData } from "@/lib/validations/volunteer-form";
+import { type VolunteerFormData, volunteerFormSchema } from "@/lib/validations/volunteer-form";
 import { supabaseUtils } from "@/lib/supabase/utils";
 
 const volunteerOpportunities = [
@@ -79,6 +79,7 @@ export default function VolunteerPage() {
       setSubmitStatus("success");
       setSubmitMessage("Thanks for volunteering! We will get in touch soon to discuss opportunities that match your interests and availability.");
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.error("Error submitting form:", error);
       setSubmitStatus("error");
       setSubmitMessage("There was an error submitting your volunteer application. Please try again or contact us directly.");
@@ -131,7 +132,7 @@ export default function VolunteerPage() {
               Volunteer Application
             </CardTitle>
             <CardDescription>
-              Fill out this form and we'll match you with suitable volunteer opportunities.
+              Fill out this form and we&apos;ll match you with suitable volunteer opportunities.
             </CardDescription>
           </CardHeader>
           <CardContent>

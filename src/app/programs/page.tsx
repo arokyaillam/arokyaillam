@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Users, Accessibility, Calendar, Utensils, GraduationCap, Heart, ArrowRight, CheckCircle, Phone, Mail } from "lucide-react";
+import { Accessibility, ArrowRight, Calendar, GraduationCap, Mail, Users, Utensils } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";

@@ -1,10 +1,10 @@
 import Link from "next/link";
-import { Calendar, Clock, ArrowRight, User } from "lucide-react";
+import { ArrowRight, Calendar, Clock, User } from "lucide-react";
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { supabaseUtils } from "@/lib/supabase/utils";
+
 
 // Mock data for now - will be replaced with real data from Supabase
 const newsPosts = [
@@ -50,7 +50,7 @@ const newsPosts = [
   }
 ];
 
-const categories = ["All", "Medical Camps", "Mental Health", "Mobility Support", "Education", "Nutrition", "Events"];
+
 
 export default async function NewsPage() {
   // In a real implementation, this would fetch from Supabase

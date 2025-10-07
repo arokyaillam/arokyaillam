@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Phone, Mail, MapPin, Clock, CheckCircle, AlertCircle } from "lucide-react";
+import { AlertCircle, CheckCircle, Clock, Mail, MapPin, Phone } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -11,7 +11,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import { contactFormSchema, type ContactFormData } from "@/lib/validations/contact-form";
+import { type ContactFormData, contactFormSchema } from "@/lib/validations/contact-form";
 import { supabaseUtils } from "@/lib/supabase/utils";
 
 const contactInfo = [
@@ -30,7 +30,7 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Address",
-    details: ["Registered Office:", "AROKYA ILLAM CHARITABLE TRUST", "India"],
+    details: ["Registered Office:", "AROKYA ILLAM CHARITABLE TRUST", "8/194, Branch School Street, Idaikal, Tenkasi, Tamil Nadu", "India - 627804"],
     description: "Visit us for in-person consultations"
   },
   {
@@ -90,6 +90,7 @@ export default function ContactPage() {
       setSubmitStatus("success");
       setSubmitMessage("Message received. Our team will respond soon.");
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.error("Error submitting form:", error);
       setSubmitStatus("error");
       setSubmitMessage("There was an error sending your message. Please try again or contact us directly.");
@@ -103,7 +104,7 @@ export default function ContactPage() {
       <div className="text-center mb-12">
         <h1 className="text-3xl md:text-4xl font-bold mb-4">Contact Us</h1>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-          Get in touch with us. We're here to help and answer any questions you may have about our services and support.
+          Get in touch with us. We&apos;re here to help and answer any questions you may have about our services and support.
         </p>
       </div>
 
@@ -113,7 +114,7 @@ export default function ContactPage() {
           <div>
             <h2 className="text-2xl font-bold mb-6">Get in Touch</h2>
             <p className="text-muted-foreground mb-8">
-              Choose the most convenient way to reach us. We're always happy to help with your questions and support needs.
+              Choose the most convenient way to reach us. We&apos;re always happy to help with your questions and support needs.
             </p>
           </div>
 
@@ -149,7 +150,7 @@ export default function ContactPage() {
             <CardHeader>
               <CardTitle>Send us a Message</CardTitle>
               <CardDescription>
-                Fill out the form below and we'll get back to you as soon as possible.
+                Fill out the form below and we&apos;ll get back to you as soon as possible.
               </CardDescription>
             </CardHeader>
             <CardContent>

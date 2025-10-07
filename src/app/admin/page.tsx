@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 // Force this page to be dynamic (not statically generated)
 export const dynamic = 'force-dynamic';
@@ -135,7 +135,7 @@ export default function AdminDashboard() {
               Welcome back, {user?.email?.split('@')[0]}!
             </h2>
             <p className="text-muted-foreground">
-              Here's an overview of your organization's activity.
+              Here&apos;s an overview of your organization&apos;s activity.
             </p>
           </div>
 
