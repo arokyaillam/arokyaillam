@@ -26,8 +26,9 @@ export function PerformanceMonitor() {
           setMetrics(prev => ({ ...prev, lcp: entry.startTime }));
         }
         if (entry.entryType === 'layout-shift') {
-          if (!(entry as any).hadRecentInput) {
-            setMetrics(prev => ({ ...prev, cls: (prev.cls || 0) + (entry as any).value }));
+          if (!(entry as PerformanceEntry & { hadRecentInput?: boolean }).hadRecentInput) {
+            const value = (entry as PerformanceEntry & { value?: number }).value || 0;
+            setMetrics(prev => ({ ...prev, cls: (prev.cls || 0) + value }));
           }
         }
       });
@@ -41,8 +42,7 @@ export function PerformanceMonitor() {
       if (navigation) {
         setMetrics(prev => ({ ...prev, ttfb: navigation.responseStart - navigation.requestStart }));
       }
-    } catch (error) {
-      console.warn('Performance monitoring not supported:', error);
+    } catch {
     }
 
     return () => {

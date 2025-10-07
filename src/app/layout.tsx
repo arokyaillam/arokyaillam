@@ -7,6 +7,7 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { SkipLink } from "@/components/skip-link";
 import { PerformanceMonitor } from "@/components/performance-monitor";
+import { AuthProvider } from "@/lib/auth/auth-context";
 import { defaultMetadata } from "@/lib/metadata";
 
 const geistSans = Geist({
@@ -37,13 +38,15 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <SkipLink />
-          <Header />
-          <main id="main-content" className="flex-1" role="main">
-            {children}
-          </main>
-          <Footer />
-          <PerformanceMonitor />
+          <AuthProvider>
+            <SkipLink />
+            <Header />
+            <main id="main-content" className="flex-1" role="main">
+              {children}
+            </main>
+            <Footer />
+            <PerformanceMonitor />
+          </AuthProvider>
         </ThemeProvider>
       </body>
     </html>

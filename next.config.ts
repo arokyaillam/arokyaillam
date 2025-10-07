@@ -18,6 +18,24 @@ const nextConfig: NextConfig = {
     optimizePackageImports: ['lucide-react', '@supabase/supabase-js'],
   },
 
+  // Disable static optimization for admin pages
+  generateBuildId: async () => {
+    return 'build-' + Date.now()
+  },
+
+  // Output configuration
+  output: 'standalone',
+
+  // Disable static generation for admin routes
+  async rewrites() {
+    return [
+      {
+        source: '/admin/:path*',
+        destination: '/admin/:path*',
+      },
+    ]
+  },
+
   // Security headers
   async headers() {
     return [
@@ -48,11 +66,8 @@ const nextConfig: NextConfig = {
   // Redirects for SEO
   async redirects() {
     return [
-      {
-        source: '/admin',
-        destination: '/admin/login',
-        permanent: false,
-      },
+      // Remove the automatic redirect from /admin to /admin/login
+      // Users can access /admin directly and will be redirected by ProtectedRoute if not authenticated
     ];
   },
 };

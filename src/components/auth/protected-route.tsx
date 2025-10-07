@@ -4,6 +4,9 @@ import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/lib/auth/auth-context";
 
+// Force this component to be dynamic (not statically generated)
+export const dynamic = 'force-dynamic';
+
 interface ProtectedRouteProps {
   children: React.ReactNode;
   requiredRole?: "admin" | "staff" | "viewer";

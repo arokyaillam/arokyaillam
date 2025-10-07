@@ -52,7 +52,17 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const hasRole = (role: string): boolean => {
     if (!user) return false;
     const userRole = user.user_metadata?.role;
-    return userRole === role || (role === 'staff' && userRole === 'admin');
+    
+    // Admin has access to everything
+    if (userRole === 'admin') return true;
+    
+    // Staff has access to staff and viewer roles
+    if (userRole === 'staff' && (role === 'staff' || role === 'viewer')) return true;
+    
+    // Viewer only has access to viewer role
+    if (userRole === 'viewer' && role === 'viewer') return true;
+    
+    return false;
   };
 
   const value = {

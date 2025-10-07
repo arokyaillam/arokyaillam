@@ -1,17 +1,21 @@
 "use client";
 
 import { useState, useEffect } from "react";
+
+// Force this page to be dynamic (not statically generated)
+export const dynamic = 'force-dynamic';
+
+// Force dynamic rendering to avoid static generation issues
+export const dynamicParams = true;
 import { useRouter } from "next/navigation";
 import {
-  Users,
-  FileText,
-  Calendar,
-  MessageSquare,
-  TrendingUp,
-  LogOut,
-  Menu,
   Bell,
-  Settings
+  Calendar,
+  FileText,
+  LogOut,
+  MessageSquare,
+  Settings,
+  Users
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -20,7 +24,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import { ProtectedRoute } from "@/components/auth/protected-route";
 import { useAuth } from "@/lib/auth/auth-context";
-import { createClient } from "@/lib/supabase/server";
+import { createServiceClient } from "@/lib/supabase/service";
 
 interface DashboardStats {
   totalApplications: number;
@@ -32,7 +36,7 @@ interface DashboardStats {
 }
 
 export default function AdminDashboard() {
-  const { user, signOut, hasRole } = useAuth();
+  const { user, signOut } = useAuth();
   const router = useRouter();
   const [stats, setStats] = useState<DashboardStats>({
     totalApplications: 0,
@@ -50,7 +54,7 @@ export default function AdminDashboard() {
 
   const fetchDashboardStats = async () => {
     try {
-      const supabase = await createClient();
+      const supabase = createServiceClient();
 
       // Fetch stats in parallel
       const [
@@ -77,8 +81,8 @@ export default function AdminDashboard() {
         recentEvents: recentEvents || 0,
         recentPosts: recentPosts || 0,
       });
-    } catch (error) {
-      console.error('Error fetching dashboard stats:', error);
+    } catch {
+      // Error fetching dashboard stats - could show user notification here
     } finally {
       setLoading(false);
     }

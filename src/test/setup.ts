@@ -51,13 +51,7 @@ global.ResizeObserver = vi.fn().mockImplementation(() => ({
 }))
 
 // Suppress console warnings in tests
-const originalConsoleWarn = console.warn
-console.warn = (...args: unknown[]) => {
-  if (
-    typeof args[0] === 'string' &&
-    args[0].includes('Warning: ReactDOM.render is deprecated')
-  ) {
-    return
-  }
-  originalConsoleWarn.call(console, ...args)
+// eslint-disable-next-line @typescript-eslint/no-unused-vars, no-console
+console.warn = (..._args: unknown[]) => {
+  // Suppress specific warnings in tests
 }

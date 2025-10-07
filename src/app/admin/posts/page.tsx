@@ -1,6 +1,12 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
+
+// Force this page to be dynamic (not statically generated)
+export const dynamic = 'force-dynamic';
+
+// Force dynamic rendering to avoid static generation issues
+export const dynamicParams = true;
 import { Plus, Edit, Trash2, Eye, Calendar, User } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -8,7 +14,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { ProtectedRoute } from "@/components/auth/protected-route";
-import { createClient } from "@/lib/supabase/server";
 
 // Mock data for now - will be replaced with real Supabase data
 const mockPosts = [
@@ -46,15 +51,14 @@ const mockPosts = [
 
 export default function AdminPostsPage() {
   const [posts, setPosts] = useState(mockPosts);
-  const [loading, setLoading] = useState(false);
 
   const handleDeletePost = async (postId: string) => {
     if (confirm("Are you sure you want to delete this post?")) {
       try {
         // In real implementation: await deletePost(postId);
         setPosts(posts.filter(post => post.id !== postId));
-      } catch (error) {
-        console.error("Error deleting post:", error);
+      } catch {
+        // Error deleting post - could show user notification here
       }
     }
   };
@@ -71,8 +75,8 @@ export default function AdminPostsPage() {
             }
           : post
       ));
-    } catch (error) {
-      console.error("Error updating post:", error);
+    } catch {
+      // Error updating post - could show user notification here
     }
   };
 

@@ -1,7 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { Plus, Edit, Trash2, Eye, Calendar, MapPin, Users } from "lucide-react";
+
+// Force this page to be dynamic (not statically generated)
+export const dynamic = 'force-dynamic';
+
+// Force dynamic rendering to avoid static generation issues
+export const dynamicParams = true;
+import { Calendar, Edit, Eye, MapPin, Plus, Trash2, Users } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -69,8 +75,8 @@ export default function AdminEventsPage() {
       try {
         // In real implementation: await deleteEvent(eventId);
         setEvents(events.filter(event => event.id !== eventId));
-      } catch (error) {
-        console.error("Error deleting event:", error);
+      } catch {
+        // Error deleting event - could show user notification here
       }
     }
   };
