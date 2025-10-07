@@ -45,7 +45,7 @@ export function announceToScreenReader(message: string) {
   }, 1000)
 }
 
-export function getContrastRatio(color1: string, color2: string): number {
+export function getContrastRatio(_color1: string, _color2: string): number {
   // Simple contrast ratio calculation
   // In a real implementation, you'd use a proper color library
   return 4.5 // Placeholder - assuming WCAG AA compliance

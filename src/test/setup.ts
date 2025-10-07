@@ -23,7 +23,7 @@ vi.mock('next/navigation', () => ({
 
 // Mock Next.js Image component
 vi.mock('next/image', () => ({
-  default: ({ src, alt, ...props }: { src: string; alt: string; [key: string]: any }) => {
+  default: ({ src, alt, ..._props }: { src: string; alt: string; [key: string]: unknown }) => {
     return `<img src="${src}" alt="${alt}" {...props} />`
   },
 }))
@@ -52,7 +52,7 @@ global.ResizeObserver = vi.fn().mockImplementation(() => ({
 
 // Suppress console warnings in tests
 const originalConsoleWarn = console.warn
-console.warn = (...args: any[]) => {
+console.warn = (...args: unknown[]) => {
   if (
     typeof args[0] === 'string' &&
     args[0].includes('Warning: ReactDOM.render is deprecated')
