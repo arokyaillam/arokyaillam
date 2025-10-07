@@ -18,7 +18,7 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Phone",
-    details: ["+91 82486 03646", "+91 99524 65550"],
+    details: ["+91 8248603646", "+91 8248603646"],
     description: "Call us during business hours"
   },
   {
