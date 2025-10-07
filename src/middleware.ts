@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 // Simple middleware for now - can be enhanced later
-export function middleware(request: NextRequest) {
+export function middleware(_request: NextRequest) {
   // Add any middleware logic here if needed
   return NextResponse.next();
 }
